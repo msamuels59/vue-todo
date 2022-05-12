@@ -9,7 +9,7 @@ import {
  import { Mutations, mutations } from './mutations';
  import { Actions, actions } from './actions';
  import { Getters, getters } from './getters';
- import taskModule from './modules/task'
+//  import { task } from './modules/task';
 
  export const store = createStore<State>({
    plugins: process.env.NODE_ENV === 'development' ? [createLogger()] : [],
@@ -18,7 +18,7 @@ import {
    actions,
    getters,
    modules: {
-    task: taskModule
+
    }
    
  })
@@ -27,7 +27,7 @@ import {
    return store as Store
  }
 
- export type Store = Omit<VuexStore<State>, 'getters' | 'commit' | 'dispatch'> & {
+ export type Store = Omit<VuexStore<State>, 'getters' | 'commit' | 'dispatch' | 'modules'> & {
    commit<K extends keyof Mutations, P extends Parameters<Mutations[K]>[1]>(
      key: K,
      payload: P,
