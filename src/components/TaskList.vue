@@ -44,7 +44,7 @@ export default defineComponent({
         }
         const showCreateModal = computed(() => store.state.showCreateModal)
         const showEditModal = computed(() => store.state.showEditModal)
-        const editTaskId = computed(() => store.sate.editModalTaskId)
+        const editTaskId = computed(() => store.state.editModalTaskId)
         const showTaskModal = computed(() => store.state.showTaskModal)
         const showTaskId = computed (() => store.state.showTaskId)
         const tasks = computed (() => store.state.tasks)
