@@ -22,7 +22,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, toRef, computed, onMounted } from "vue";
+import { defineComponent, computed} from "vue";
 import { useStore } from "@/store";
 import { TaskItem } from "@/store/state";
 import { MutationType } from "@/store/mutations";
