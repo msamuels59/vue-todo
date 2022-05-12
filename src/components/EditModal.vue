@@ -52,7 +52,7 @@
 <script lang="ts">
 import { reactive, toRefs, computed, onMounted } from "vue";
 import { useStore } from "@/store";
-import { TaskItem } from "@/store/state";
+import { TaskItem } from "@/store/modules/task/state";
 import { MutationType } from "@/store/mutations";
 export default {
     name: 'EditModal',

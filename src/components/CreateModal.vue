@@ -51,7 +51,7 @@
 <script lang="ts">
 import { defineComponent, reactive, toRefs } from "vue";
 import { useStore } from "@/store";
-import { TaskItem } from "@/store/state";
+import { TaskItem } from "@/store/modules/task/state";
 import { MutationType } from "@/store/mutations";
 export default defineComponent({
     name: 'CreateModal',

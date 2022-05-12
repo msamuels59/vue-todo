@@ -1,6 +1,6 @@
 import { ActionContext, ActionTree } from "vuex";
 import { Mutations, MutationType } from './mutations';
-import { State } from "./state";
+import { State } from "./modules/task/state";
 
 export enum ActionTypes {
     GetTaskItems = 'GET_TASK_ITEMS',

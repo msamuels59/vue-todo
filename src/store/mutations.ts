@@ -1,6 +1,6 @@
 import { shallowReactive } from "vue";
 import { MutationTree } from "vuex";
-import { state, State, TaskItem } from "./state";
+import { state, State, TaskItem } from "./modules/task/state";
 
 export enum MutationType {
     CreateTask = 'CREATE_TASK',

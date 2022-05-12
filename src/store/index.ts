@@ -5,7 +5,7 @@ import {
   DispatchOptions,
   createLogger,
  } from 'vuex';
- import { State, state } from './state';
+ import { State, state } from './modules/task/state';
  import { Mutations, mutations } from './mutations';
  import { Actions, actions } from './actions';
  import { Getters, getters } from './getters';
