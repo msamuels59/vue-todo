@@ -18,7 +18,7 @@ import {
    getters
  })
 
- export function userStore() {
+ export function useStore() {
    return store as Store
  }
 

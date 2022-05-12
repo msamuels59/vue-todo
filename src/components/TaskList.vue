@@ -27,7 +27,7 @@ import EditModal from './EditModal';
 import TaskItem from './TaskItem';
 import TaskListItem from './TaskListItem'
 import { defineComponent, computed } from 'vue';
-import { userStore } from '@/store';
+import { useStore } from '@/store'
 import { MutationType } from '@/store/mutations';
 export default defineComponent({
     name: 'TaskList',
