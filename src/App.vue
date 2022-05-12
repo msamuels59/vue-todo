@@ -18,14 +18,14 @@
 <script lang="ts">
 import { computed, defineComponent, onMounted } from 'vue';
 import TaskList from './components/TaskList.vue';
-import { userStore } from './store';
+import { useStore } from './store';
 import { ActionTypes } from './store/actions';
 
 export default defineComponent({
   name: 'ToDo',
   components: { TaskList },
   setup() {
-    const store = userStore()
+    const store = useStore()
     const loading = computed(() => store.state.loading)
     onMounted(() => store.dispatch(ActionTypes.GetTaskItems))
     const completedCount = computed(() => store.getters.completedTaskCount)
