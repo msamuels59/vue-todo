@@ -20,18 +20,18 @@
             <textarea
               v-model="description"
               class="textarea"
-              placeholder="Textarea"
+              placeholder="What needs to get done"
             ></textarea>
           </div>
         </div>
         <div class="field">
-          <label class="label">Assigned By</label>
+          <label class="label">Created By</label>
           <div class="control">
             <input
               v-model="createdBy"
               class="input"
               type="text"
-              placeholder="Enter Assigner's name"
+              placeholder="Enter your name"
             />
           </div>
         </div>
@@ -45,11 +45,11 @@
         </div>
       </form>
     </div>
-    <button
+    <!-- <button
       class="modal-close is-large"
       @click="closeModal"
       aria-label="close"
-    ></button>
+    ></button> -->
   </div>
 </template>
 
