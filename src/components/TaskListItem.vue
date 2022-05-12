@@ -52,6 +52,7 @@ export default defineComponent({
         const editTask = () => {
             store.commit(MutationType.SetEditModal, {showModal:true, taskId:props.id})
         }
+
         return { toggleCompletion, removeTask, editTask, viewTask }
     }
 })

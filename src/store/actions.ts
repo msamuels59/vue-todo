@@ -4,6 +4,7 @@ import { State } from "./state";
 
 export enum ActionTypes {
     GetTaskItems = 'GET_TASK_ITEMS',
+    ShowCreateButton = 'SHOW_CREATE_BUTTON',
     SetCreateModal = 'SET_CREATE_MODAL',
     SetEditModal = 'SET_EDIT_MODAL',
 }
@@ -19,6 +20,7 @@ export type Actions = {
     [ActionTypes.GetTaskItems](context: ActionAugments): void
     [ActionTypes.SetCreateModal](context: ActionAugments): void
     [ActionTypes.SetEditModal](context: ActionAugments): void
+    [ActionTypes.ShowCreateButton](context: ActionAugments): void
 }
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
@@ -39,10 +41,13 @@ export const actions: ActionTree<State, State> & Actions = {
             }
         ])
     },
+    async [ActionTypes.ShowCreateButton]({ commit }) {
+        commit(MutationType.ShowCreateButton, false)
+    },
     async [ActionTypes.SetCreateModal]({ commit }) {
         commit(MutationType.SetCreateModal, true)
     },
     async [ActionTypes.SetEditModal]({ commit }) {
         commit(MutationType.SetEditModal, {showModal: true, taskId: 1})
-    }
+    },
 }
