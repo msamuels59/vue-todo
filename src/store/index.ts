@@ -9,7 +9,7 @@ import {
  import { Mutations, mutations } from './mutations';
  import { Actions, actions } from './actions';
  import { Getters, getters } from './getters';
-//  import task from './modules/task';
+ import taskModule from './modules/task'
 
  export const store = createStore<State>({
    plugins: process.env.NODE_ENV === 'development' ? [createLogger()] : [],
@@ -18,8 +18,9 @@ import {
    actions,
    getters,
    modules: {
-    //  task
+    task: taskModule
    }
+   
  })
 
  export function useStore() {
