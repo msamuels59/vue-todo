@@ -83,7 +83,8 @@ export default defineComponent({
                 state.description = '';
         }
         const closeModal = () => {
-            store.commit(MutationType.SetCreateModal, false)
+            store.commit(MutationType.SetCreateModal, false);
+            store.commit(MutationType.ShowCreateButton, true);
         }
         return { closeModal, ...toRefs(state), createTask }
     }
