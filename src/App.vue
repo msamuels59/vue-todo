@@ -8,7 +8,7 @@
     </div>
     <div v-else>
       <p class="has-text-centered mt-2">
-        {{ completedCount }} of {{ totalCount }} completed
+        {{ completedCount }} of {{ totalCount }} completed,
       </p>
       <TaskList />
     </div>
