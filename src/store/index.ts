@@ -15,7 +15,8 @@ import {
    state,
    mutations,
    actions,
-   getters
+   getters,
+   modules: {}
  })
 
  export function useStore() {
