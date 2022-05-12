@@ -12,7 +12,8 @@ export enum MutationType {
     SetLoading = 'SET_LOADING',
     SetCreateModal = 'SET_CREATE_MODAL',
     SetEditModal = 'SET_EDIT_MODAL',
-    SetTaskModal = 'SET_TASK_MODAL'
+    SetTaskModal = 'SET_TASK_MODAL',
+    ShowCreateButton = 'SHOW_CREATE_BUTTON'
 }
 
 export type Mutations = {
@@ -38,6 +39,7 @@ export type Mutations = {
     [MutationType.SetCreateModal](state: State, value: boolean): void
     [MutationType.SetEditModal](state: State, value: {showModal: boolean, taskId: number|undefined}): void
     [MutationType.SetTaskModal](state: State, value: {showModal: boolean, taskId: number|undefined}): void
+    [MutationType.ShowCreateButton](state: State, value: boolean): void
 }
 
 export const mutations: MutationTree<State> & Mutations = {
@@ -86,5 +88,8 @@ export const mutations: MutationTree<State> & Mutations = {
     [MutationType.SetTaskModal](state, value) {
         state.showTaskModal = value.showModal
         state.showTaskId = value.taskId
+    },
+    [MutationType.ShowCreateButton](state, value) {
+        state.showCreateButton = value
     }
 }

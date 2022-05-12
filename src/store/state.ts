@@ -14,6 +14,7 @@ export type State = {
     showTaskModal: boolean;
     editModalTaskId: number | undefined;
     showTaskId: number | undefined;
+    showCreateButton: boolean;
 };
 export const state: State = {
     loading: false,
@@ -23,4 +24,5 @@ export const state: State = {
     showTaskModal: false,
     editModalTaskId: undefined,
     showTaskId: undefined,
+    showCreateButton: true,
 }

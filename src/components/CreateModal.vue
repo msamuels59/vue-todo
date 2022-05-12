@@ -45,11 +45,6 @@
         </div>
       </form>
     </div>
-    <!-- <button
-      class="modal-close is-large"
-      @click="closeModal"
-      aria-label="close"
-    ></button> -->
   </div>
 </template>
 

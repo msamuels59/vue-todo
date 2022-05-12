@@ -7,7 +7,7 @@
             <div class="card-content">
                 <div class="media-content">
                     <p class="title is-4">Title: {{ task.title }}</p>
-                    <p class="subtitle is-6"><b>Created By:</b> {{ task.createdBy }}</p>
+                    <p class="subtitle is-6"> Created By: {{ task.createdBy }}</p>
                 </div>
                 <div class="content">
                     <p class="subtitle is-6">Description: {{ task.description }}</p>

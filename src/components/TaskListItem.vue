@@ -3,7 +3,7 @@
     <td>
         <input type="checkbox" :checked="completed" @change="toggleCompletion()" />
     </td>
-    <td> <strong>{{ title }} </strong></td>
+    <td><strong> {{ title }} </strong></td>
     <td>{{ createdBy }}</td>
     <td>
         <span class="icon" @click="viewTask()">
