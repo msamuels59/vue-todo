@@ -41,21 +41,16 @@
             <button type="submit" class="button is-link">Submit</button>
           </div>
           <div class="control">
-            <button class="button is-link is-light">Cancel</button>
+            <button class="button is-link is-light" @click="closeModal">Cancel</button>
           </div>
         </div>
       </form>
     </div>
-    <button
-      class="modal-close is-large"
-      @click="closeModal"
-      aria-label="close"
-    ></button>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, toRefs, computed, onMounted } from "vue";
+import { reactive, toRefs, computed, onMounted } from "vue";
 import { useStore } from "@/store";
 import { TaskItem } from "@/store/state";
 import { MutationType } from "@/store/mutations";

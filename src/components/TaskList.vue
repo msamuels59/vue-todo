@@ -14,11 +14,10 @@
                 <TaskListItemVue v-bind="task" />
             </tr>
         </tbody>
-        <tfoot>
-            <CreateModalVue v-show="showCreateModal"></CreateModalVue>
-            <button class="button is-link" @click="setModal">Create Task</button>
-        </tfoot>
+
     </table>
+    <CreateModalVue v-show="showCreateModal"></CreateModalVue>
+        <button class="button is-link" @click="setModal">Create Task</button>
     <EditModalVue v-if="showEditModal" :id="editTaskId"></EditModalVue>
     <TaskItemVue v-if="showTaskModal" :id="showTaskId"></TaskItemVue>
 </template>

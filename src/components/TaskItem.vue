@@ -17,10 +17,9 @@
         <button
         class="modal-close is-large"
         @click="closeModal"
-        areia-label="close"></button>
+        areia-label="close">X</button>
     </div>
 </template>
-
 
 
 <script lang="ts">
