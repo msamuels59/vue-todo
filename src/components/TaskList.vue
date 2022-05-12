@@ -2,11 +2,11 @@
     <table class="table">
         <thead>
             <tr>
-                <th><abbr title="Position">Task Id</abbr></th>
+                <th>Task Id</th>
                 <th>Completed</th>
                 <th>Task</th>
-                <th><abbr title="Win">Created By</abbr></th>
-                <th><abbr title="Draw">Actions</abbr></th>
+                <th>Created By</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody v-if="tasks">

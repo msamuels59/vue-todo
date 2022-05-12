@@ -59,7 +59,7 @@ import { defineComponent, reactive, toRefs, computed, onMounted } from "vue";
 import { useStore } from "@/store";
 import { TaskItem } from "@/store/state";
 import { MutationType } from "@/store/mutations";
-export default defineComponent({
+export default {
     name: 'EditModal',
     props: {
         id: { type: Number, required: true }
@@ -72,6 +72,7 @@ export default defineComponent({
         })
         const store = useStore();
         const getTaskById = computed(() => store.getters.getTaskById(Number(props.id)))
+        console.log("task by id", getTaskById)
 
         const setFields = () => {
             const task = store.getters.getTaskById(Number(props.id))
@@ -107,7 +108,7 @@ export default defineComponent({
         }
         return { closeModal, ...toRefs(state), updateTask}
     }
-})
+}
 </script>
 <style scoped>
 label {

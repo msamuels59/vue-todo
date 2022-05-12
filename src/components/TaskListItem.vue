@@ -7,19 +7,19 @@
     <td>{{ createdBy }}</td>
     <td>
         <span class="icon" @click="viewTask()">
-            <i class="fa fa-eye"></i>
+            <button class="fas fa-eye">Details</button>
         </span>
         <span class="icon" @click="editTask()">
-            <i class="fa fa-edit"></i>
+            <button class="fa fa-edit">Edit</button>
         </span>
         <span class="icon" @click="removeTask()">
-            <i class=" fa fa-trash"></i>
+            <button class="fa fa-trash">Delete</button>
         </span>
     </td>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from "vue";
+import { defineComponent} from "vue";
 import { useStore } from "@/store";
 import { MutationType } from "@/store/mutations";
 export default defineComponent({
@@ -28,6 +28,9 @@ export default defineComponent({
         title: { type: String, required: true },
         createdBy: { type: String, required: true},
         completed: { type: Boolean, required: true}
+    },
+    components: {
+
     },
     setup(props) {
         const store = useStore()

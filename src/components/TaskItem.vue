@@ -21,26 +21,32 @@
     </div>
 </template>
 
+
+
 <script lang="ts">
-import { defineComponent, computed} from "vue";
+import { computed} from "vue";
 import { useStore } from "@/store";
-import { TaskItem } from "@/store/state";
+
 import { MutationType } from "@/store/mutations";
-export default defineComponent ({
-    name: 'TaskItem',
-    props: {
-        id: { type: Number, requiered: true }
-    },
-    setup(props: any) {
-        const store = useStore();
-        const task = computed(() => store.getters.getTaskById(Number(props.id)));
-        const closeModal = () => {
-            store.commit(MutationType.SetTaskModal, {showModal: false, taskId: undefined})
-        };
-        return {closeModal, task };
-    },
-});
+export default {
+  name: "TaskModal",
+  props: {
+    id: { type: Number, required: true },
+  },
+  setup(props: any) {
+    const store = useStore();
+    const task = computed(() => store.getters.getTaskById(Number(props.id)));
+    const closeModal = () => {
+      store.commit(MutationType.SetTaskModal, {
+        showModal: false,
+        taskId: undefined,
+      });
+    };
+    return { closeModal, task };
+  },
+};
 </script>
+
 <style scoped>
 h1 {
     color: #ffffff;
