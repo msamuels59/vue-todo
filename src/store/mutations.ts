@@ -8,7 +8,7 @@ export enum MutationType {
     CompleteTask = 'COMPLETE_TASK',
     RemoveTask = 'REMOVE_TASK',
     EditTask = 'EDIT_TASK',
-    UpdateTask = 'UPDATE_TASK',
+    // UpdateTask = 'UPDATE_TASK',
     SetLoading = 'SET_LOADING',
     ShowCreateButton = 'SHOW_CREATE_BUTTON',
     SetCreateModal = 'SET_CREATE_MODAL',
@@ -31,10 +31,10 @@ export type Mutations = {
         state: State,
         task: Partial<TaskItem> & {id: number}
     ): void
-    [MutationType.UpdateTask](
-        state: State,
-        task: Partial<TaskItem> & {id: number}
-    ): void
+    // [MutationType.UpdateTask](
+    //     state: State,
+    //     task: Partial<TaskItem> & {id: number}
+    // ): void
     [MutationType.SetLoading](state: State, value: boolean): void
     [MutationType.SetCreateModal](state: State, value: boolean): void
     [MutationType.SetEditModal](state: State, value: {showModal: boolean, taskId: number|undefined}): void
@@ -66,14 +66,14 @@ export const mutations: MutationTree<State> & Mutations = {
         state.tasks[task] = { ...state.tasks[task], editing: !state.tasks[task].editing }
         console.log('Edit successful', state.tasks[task])
     },
-    [MutationType.UpdateTask](state, Task) {
-        state.tasks = state.tasks.map(task => {
-            if (task.id === Task.id) {
-                return {...task, ...Task}
-            }
-            return task;
-        })
-    },
+    // [MutationType.UpdateTask](state, Task) {
+    //     state.tasks = state.tasks.map(task => {
+    //         if (task.id === Task.id) {
+    //             return {...task, ...Task}
+    //         }
+    //         return task;
+    //     })
+    // },
     [MutationType.SetLoading](state, value) {
         state.loading = value
         console.log('Loading...')

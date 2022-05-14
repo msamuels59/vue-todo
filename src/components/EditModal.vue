@@ -54,6 +54,7 @@ import { reactive, toRefs, computed, onMounted } from "vue";
 import { useStore } from "@/store";
 import { TaskItem } from "@/store/modules/task/state";
 import { MutationType } from "@/store/mutations";
+import { taskModule } from "@/store/modules/task/task";
 export default {
     name: 'EditModal',
     props: {
@@ -93,7 +94,7 @@ export default {
                 completed: false,
                 editing: false
             };
-            store.commit(MutationType.UpdateTask, task);
+            store.commit(taskModule.UpdateTask, task);
             state.title = '';
             state.createdBy = '';
             state.description = '';
