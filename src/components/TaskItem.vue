@@ -24,19 +24,17 @@
 
 <script lang="ts">
 import { computed} from "vue";
-import { useStore } from "@/store";
+import store from "@/store";
 
-import { MutationType } from "@/store/mutations";
 export default {
   name: "TaskModal",
   props: {
     id: { type: Number, required: true },
   },
   setup(props: any) {
-    const store = useStore();
-    const task = computed(() => store.getters.getTaskById(Number(props.id)));
+    const task = computed(() => store.taskModule.getters.getTaskById(Number(props.id)));
     const closeModal = () => {
-      store.commit(MutationType.SetTaskModal, {
+      store.commit('taskModule/SET_TASK_MODAL', {
         showModal: false,
         taskId: undefined,
       });

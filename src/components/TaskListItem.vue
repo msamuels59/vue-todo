@@ -18,10 +18,9 @@
     </td>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent} from "vue";
-import { useStore } from "@/store";
-import { MutationType } from "@/store/mutations";
+import store from '@/store'
 export default defineComponent({
     props: {
         id: { type: Number, required: true },
@@ -33,24 +32,23 @@ export default defineComponent({
 
     },
     setup(props) {
-        const store = useStore()
 
         const toggleCompletion = () => {
-            store.commit(MutationType.CompleteTask, {
+            store.commit('taskModule/COMPLETE_TASK', {
                 id: props.id,
                 completed: !props.completed
             })
         }
         const removeTask = () => {
-            store.commit(MutationType.RemoveTask, {
+            store.commit('taskModule/REMOVE_TASK', {
                 id: props.id
             })
         }
         const viewTask = () => {
-            store.commit(MutationType.SetTaskModal, {showModal:true, taskId:props.id})
+            store.commit('taskModule/SET_TASK_MODAL', {showModal:true, taskId:props.id})
         }
         const editTask = () => {
-            store.commit(MutationType.SetEditModal, {showModal:true, taskId:props.id})
+            store.commit('taskModule/SET_EDIT_MODAL', {showModal:true, taskId:props.id})
         }
 
         return { toggleCompletion, removeTask, editTask, viewTask }

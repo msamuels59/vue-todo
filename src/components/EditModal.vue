@@ -49,29 +49,23 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import { reactive, toRefs, computed, onMounted } from "vue";
-import { useStore } from "@/store";
-import { TaskItem } from "@/store/modules/task/state";
-import { MutationType } from "@/store/mutations";
-import { taskModule } from "@/store/modules/task/task";
+import store from '@/store'
 export default {
     name: 'EditModal',
     props: {
         id: { type: Number, required: true }
     },
-    setup(props: any) {
+    setup(props) {
         const state = reactive({
             title: '',
             description: '',
             createdBy: ''
         })
-        const store = useStore();
-        const getTaskById = computed(() => store.getters.getTaskById(Number(props.id)))
-        console.log("task by id", getTaskById)
-
+        const getTaskById = computed(() => store.taskModule.getters.getTaskById(Number(props.id)))
         const setFields = () => {
-            const task = store.getters.getTaskById(Number(props.id))
+            const task = store.taskModule.getters.getTaskById(Number(props.id))
             if (task) {
                 state.title = task.title
                 state.createdBy = task.createdBy
@@ -86,7 +80,7 @@ export default {
                 state.createdBy === '' 
             )
             return
-            const task: TaskItem = {
+            const task= {
                 id: props.id,
                 title: state.title,
                 description: state.description,
@@ -94,13 +88,13 @@ export default {
                 completed: false,
                 editing: false
             };
-            store.commit(taskModule.mutations.UpdateTask, task);
+            store.commit('taskModule/UPDATE_TASK', task);
             state.title = '';
             state.createdBy = '';
             state.description = '';
         }
         const closeModal = () => {
-            store.commit(MutationType.SetEditModal, {showModal: false, taskId: undefined})
+            store.commit('taskModule/SET_EDIT_MODAL', {showModal: false, taskId: undefined})
         }
         return { closeModal, ...toRefs(state), updateTask}
     }
