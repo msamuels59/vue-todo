@@ -94,7 +94,7 @@ export default {
                 completed: false,
                 editing: false
             };
-            store.commit(taskModule.UpdateTask, task);
+            store.commit(taskModule.mutations.UpdateTask, task);
             state.title = '';
             state.createdBy = '';
             state.description = '';
