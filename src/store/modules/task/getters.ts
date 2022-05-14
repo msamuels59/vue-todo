@@ -1,5 +1,5 @@
 import { GetterTree } from "vuex";
-import { State, TaskItem } from "./modules/task/state";
+import { State, TaskItem } from "./state";
 
 export type Getters = {
     completedTaskCount(state: State): number
