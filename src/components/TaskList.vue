@@ -14,12 +14,31 @@
                 <TaskListItemVue v-bind="task" />
             </tr>
         </tbody>
-
     </table>
-    <CreateModalVue v-show="showCreateModal"></CreateModalVue>
-        <button class="button is-link" @click="setModal(); setButton();">Create Task</button>
+    <v-card 
+    elevation="2" 
+    shaped 
+    tile
+    class="mx-auto"
+    max-width="344"> 
+        <CreateModalVue v-show="showCreateModal"></CreateModalVue>
+    </v-card>
+    <v-card 
+    elevation="2" 
+    shaped 
+    tile
+    class="mx-auto"
+    max-width="344"> 
     <EditModalVue v-if="showEditModal" :id="editTaskId"></EditModalVue>
+    </v-card>
+    <v-card 
+    elevation="2" 
+    shaped 
+    tile
+    class="mx-auto"
+    max-width="344"> 
     <TaskItemVue v-if="showTaskModal" :id="showTaskId"></TaskItemVue>
+    </v-card>
 </template>
 
 <script lang="ts">
@@ -50,8 +69,8 @@ export default defineComponent({
         const showEditModal = computed(() => store.state.showEditModal)
         const editTaskId = computed(() => store.state.editModalTaskId)
         const showTaskModal = computed(() => store.state.showTaskModal)
-        const showTaskId = computed (() => store.state.showTaskId)
-        const tasks = computed (() => store.state.tasks)
+        const showTaskId = computed(() => store.state.showTaskId)
+        const tasks = computed(() => store.state.tasks)
         const showCreateButton = computed(() => store.state.showCreateButton)
 
         return { showCreateModal, setModal, tasks, showEditModal, showTaskModal, editTaskId, showTaskId, showCreateButton, setButton }
