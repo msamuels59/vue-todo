@@ -59,15 +59,4 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>  
-    table {
-      width: 100%;
-    }
-    .fa {
-      font-size: 1.2rem;
-      margin-left: 15px;
-    }
-    .fa:hover {
-      font-size: 1.4rem;
-    }
-</style>
+

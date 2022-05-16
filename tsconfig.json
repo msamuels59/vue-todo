@@ -33,7 +33,7 @@
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx"
-  ],
+, "src/plugins/webfontloader.ts"  ],
   "exclude": [
     "node_modules"
   ]

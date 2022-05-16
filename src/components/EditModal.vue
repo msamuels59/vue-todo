@@ -105,14 +105,3 @@ export default {
     }
 }
 </script>
-<style scoped>
-label {
-    color: #ffffff;
-}
-h1 {
-    color: #ffffff;
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 3rem;
-}
-</style>
