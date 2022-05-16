@@ -40,9 +40,9 @@
     </v-app-bar>
 
     <v-main>
-      <p>
+      <div class="grey--text mb-2 font-weight-medium text-center">
         {{ completedCount }} of {{ totalCount }} completed
-      </p>
+      </div>
       <TaskList />
     </v-main>
   </v-app>

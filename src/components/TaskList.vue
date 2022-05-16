@@ -1,5 +1,33 @@
 <template>
-    <table class="table">
+    <v-table>
+        <template v-slot:default>
+            <thead>
+                <tr>
+                    <th class="text-left">
+                        Task Id
+                    </th>
+                    <th class="text-left">
+                        Completed
+                    </th>
+                    <th class="text-left">
+                        Task
+                    </th>
+                    <th class="text-left">
+                        Created By
+                    </th>
+                    <th class="text-left">
+                        Actions
+                    </th>
+                </tr>
+            </thead>
+            <tbody v-if="tasks">
+                <tr v-for="task in tasks" :key="task.id">
+                    <TaskListItemVue v-bind="task" />
+                </tr>
+            </tbody>
+        </template>
+    </v-table>
+    <!-- <table class="table">
         <thead>
             <tr>
                 <th>Task Id</th>
@@ -14,30 +42,15 @@
                 <TaskListItemVue v-bind="task" />
             </tr>
         </tbody>
-    </table>
-    <v-card 
-    elevation="2" 
-    shaped 
-    tile
-    class="mx-auto"
-    max-width="344"> 
+    </table> -->
+    <v-card elevation="2" shaped tile class="mx-auto" max-width="344">
         <CreateModalVue v-show="showCreateModal"></CreateModalVue>
     </v-card>
-    <v-card 
-    elevation="2" 
-    shaped 
-    tile
-    class="mx-auto"
-    max-width="344"> 
-    <EditModalVue v-if="showEditModal" :id="editTaskId"></EditModalVue>
+    <v-card elevation="2" shaped tile class="mx-auto" max-width="344">
+        <EditModalVue v-if="showEditModal" :id="editTaskId"></EditModalVue>
     </v-card>
-    <v-card 
-    elevation="2" 
-    shaped 
-    tile
-    class="mx-auto"
-    max-width="344"> 
-    <TaskItemVue v-if="showTaskModal" :id="showTaskId"></TaskItemVue>
+    <v-card elevation="2" shaped tile class="mx-auto" max-width="344">
+        <TaskItemVue v-if="showTaskModal" :id="showTaskId"></TaskItemVue>
     </v-card>
 </template>
 
