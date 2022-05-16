@@ -1,52 +1,25 @@
 <template>
-  <div class="modal is-active">
-    <div class="modal-background"></div>
-    <div class="modal-content">
-      <form @submit.prevent="updateTask">
-          <h1>Edit Modal</h1>
-        <div class="field">
-          <label class="label">Task Title</label>
-          <div class="control">
-            <input
-              v-model="title"
-              class="input"
-              type="text"
-              placeholder="Enter task"
-            />
-          </div>
-        </div>
-        <div class="field">
-          <label class="label">Description</label>
-          <div class="control">
-            <textarea
-              v-model="description"
-              class="textarea"
-              placeholder="Textarea"
-            ></textarea>
-          </div>
-        </div>
-        <div class="field">
-          <label class="label">Assigned By</label>
-          <div class="control">
-            <input
-              v-model="createdBy"
-              class="input"
-              type="text"
-              placeholder="Enter Assigner's name"
-            />
-          </div>
-        </div>
-        <div class="field is-grouped">
-          <div class="control">
-            <button type="submit" class="button is-link">Submit</button>
-          </div>
-          <div class="control">
-            <button class="button is-link is-light" @click="closeModal">Cancel</button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
+  <v-form @submit.prevent="updateTask">
+    <v-container>
+      <v-row>
+        <v-col cols="12" md="4">
+          <v-text-field v-model="title" :counter="25" label="Title" required></v-text-field>
+        </v-col>
+
+        <v-col cols="12" md="4">
+          <v-textarea v-model="description" label="Description" required></v-textarea>
+        </v-col>
+
+        <v-col cols="12" md="4">
+          <v-text-field v-model="createdBy" label="Creator" required></v-text-field>
+        </v-col>
+      </v-row>
+    </v-container>
+    <v-row align="center" justify="space-around">
+      <v-btn depressed color="primary" type="submit" @click="updateTask(); closeModal()">Submit</v-btn>
+      <v-btn depressed color="error" @click="closeModal">Cancel</v-btn>
+    </v-row>
+  </v-form>
 </template>
 
 <script lang="ts">

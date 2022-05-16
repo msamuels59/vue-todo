@@ -1,18 +1,14 @@
 <template>
     <th>{{ id }}</th>
     <td>
-        <input type="checkbox" :checked="completed" @change="toggleCompletion()" />
+        <v-checkbox class="align-center justify-center" :checked="completed" @change="toggleCompletion()" />
     </td>
     <td><strong> {{ title }} </strong></td>
     <td>{{ createdBy }}</td>
     <td>
-            <v-btn depressed elevation="2" x-small @click="viewTask()">Details</v-btn>
-        <span class="icon" @click="editTask()">
-            <button class="fa fa-edit">Edit</button>
-        </span>
-        <span class="icon" @click="removeTask()">
-            <button class="fa fa-trash">Delete</button>
-        </span>
+        <v-btn depressed elevation="2" @click="viewTask()" >Details</v-btn>
+        <v-btn depressed elevation="2" x-small @click="editTask">Edit</v-btn>
+        <v-btn depressed elevation="2" x-small @click="removeTask">Delete</v-btn>
     </td>
 </template>
 

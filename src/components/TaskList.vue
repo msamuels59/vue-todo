@@ -30,10 +30,10 @@
     <v-card elevation="2" shaped tile class="mx-auto" max-width="750">
         <CreateModalVue v-show="showCreateModal"></CreateModalVue>
     </v-card>
-    <v-card elevation="2" shaped tile class="mx-auto" max-width="344">
+    <v-card elevation="2" shaped tile class="mx-auto" max-width="750">
         <EditModalVue v-if="showEditModal" :id="editTaskId"></EditModalVue>
     </v-card>
-    <v-card elevation="2" shaped tile class="mx-auto" max-width="344">
+    <v-card elevation="2" shaped tile class="mx-auto" max-width="750">
         <TaskItemVue v-if="showTaskModal" :id="showTaskId"></TaskItemVue>
     </v-card>
 </template>

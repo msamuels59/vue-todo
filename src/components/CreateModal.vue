@@ -7,7 +7,7 @@
         </v-col>
 
         <v-col cols="12" md="4">
-          <v-text-field v-model="description" label="Description" required></v-text-field>
+          <v-textarea v-model="description" label="Description" required></v-textarea>
         </v-col>
 
         <v-col cols="12" md="4">
