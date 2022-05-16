@@ -6,9 +6,7 @@
     <td><strong> {{ title }} </strong></td>
     <td>{{ createdBy }}</td>
     <td>
-        <span class="icon" @click="viewTask()">
-            <button class="fas fa-eye">Details</button>
-        </span>
+            <v-btn depressed elevation="2" x-small @click="viewTask()">Details</v-btn>
         <span class="icon" @click="editTask()">
             <button class="fa fa-edit">Edit</button>
         </span>
@@ -19,15 +17,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent} from "vue";
+import { defineComponent } from "vue";
 import { useStore } from "@/store";
 import { MutationType } from "@/store/mutations";
 export default defineComponent({
     props: {
         id: { type: Number, required: true },
         title: { type: String, required: true },
-        createdBy: { type: String, required: true},
-        completed: { type: Boolean, required: true}
+        createdBy: { type: String, required: true },
+        completed: { type: Boolean, required: true }
     },
     components: {
 
@@ -47,10 +45,10 @@ export default defineComponent({
             })
         }
         const viewTask = () => {
-            store.commit(MutationType.SetTaskModal, {showModal:true, taskId:props.id})
+            store.commit(MutationType.SetTaskModal, { showModal: true, taskId: props.id })
         }
         const editTask = () => {
-            store.commit(MutationType.SetEditModal, {showModal:true, taskId:props.id})
+            store.commit(MutationType.SetEditModal, { showModal: true, taskId: props.id })
         }
 
         return { toggleCompletion, removeTask, editTask, viewTask }

@@ -27,23 +27,7 @@
             </tbody>
         </template>
     </v-table>
-    <!-- <table class="table">
-        <thead>
-            <tr>
-                <th>Task Id</th>
-                <th>Completed</th>
-                <th>Task</th>
-                <th>Created By</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody v-if="tasks">
-            <tr v-for="task in tasks" :key="task.id">
-                <TaskListItemVue v-bind="task" />
-            </tr>
-        </tbody>
-    </table> -->
-    <v-card elevation="2" shaped tile class="mx-auto" max-width="344">
+    <v-card elevation="2" shaped tile class="mx-auto" max-width="750">
         <CreateModalVue v-show="showCreateModal"></CreateModalVue>
     </v-card>
     <v-card elevation="2" shaped tile class="mx-auto" max-width="344">
