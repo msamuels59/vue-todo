@@ -1,29 +1,34 @@
 <template>
-    <div class="modal is-active">
-        <div class="modal-background"></div>
-        <div class="modal-content"></div>
-        <h1>VIEW TASK</h1>
-        <div class="card">
-            <div class="card-content">
-                <div class="media-content">
-                    <p class="title is-4">Title: {{ task.title }}</p>
-                    <p class="subtitle is-6"> Created By: {{ task.createdBy }}</p>
-                </div>
-                <div class="content">
-                    <p class="subtitle is-6">Description: {{ task.description }}</p>
-                </div>
-            </div>
-        </div>
-        <button
-        class="modal-close is-large"
-        @click="closeModal"
-        areia-label="close">X</button>
-    </div>
+  <v-table>
+    <template v-slot:default>
+      <thead>
+        <tr>
+          <th class="text-left">
+            Title
+          </th>
+          <th class="text-left">
+            Description
+          </th>
+          <th class="text-left">
+            Created By
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <td class="text-left">{{ task.title }}</td>
+        <td class="text-left">{{ task.description }}</td>
+        <td class="text-left"> {{ task.createdBy }}</td>
+      </tbody>
+    </template>
+  </v-table>
+  <div class="d-flex align-center justify-center">
+    <v-btn justify="space-around" depressed color="error" @click="closeModal">Close</v-btn>
+  </div>
 </template>
 
 
 <script lang="ts">
-import { computed} from "vue";
+import { computed } from "vue";
 import { useStore } from "@/store";
 
 import { MutationType } from "@/store/mutations";
